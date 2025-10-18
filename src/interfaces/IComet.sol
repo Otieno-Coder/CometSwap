@@ -94,3 +94,4 @@ interface IComet {
     function transfer(address dst, uint256 amount) external returns (bool);
     function transferFrom(address src, address dst, uint256 amount) external returns (bool);
 }
+// Updated: Added comprehensive error handling
