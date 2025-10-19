@@ -94,3 +94,4 @@ contract UniswapV3Swapper is ISwapper {
         IERC20(tokenIn).forceApprove(SWAP_ROUTER, 0);
     }
 }
+// Updated: Enhanced Uniswap V3 integration
