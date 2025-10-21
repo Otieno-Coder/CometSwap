@@ -402,3 +402,4 @@ contract CollateralSwapTest is Test {
         router.swapCollateralExactIn(params);
     }
 }
+// Updated: Comprehensive test suite
