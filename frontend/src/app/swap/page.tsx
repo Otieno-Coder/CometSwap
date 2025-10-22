@@ -163,3 +163,4 @@ export default function SwapPage() {
     </div>
   );
 }
+// Updated: Frontend components
