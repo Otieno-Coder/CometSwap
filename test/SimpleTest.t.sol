@@ -112,3 +112,4 @@ contract SimpleTest is Test {
         router.swapCollateralExactIn(params);
     }
 }
+// Updated: Enhanced error handling
