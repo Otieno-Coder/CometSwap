@@ -62,19 +62,6 @@ CollateralSwapRouter
 - **Swap Interface**: Amount input with percentage buttons and USD conversion
 - **Mode Toggle**: Switch between direct and flash-assisted modes
 
-## Development Timeline
-
-| Date | Milestone | Status |
-|------|-----------|--------|
-| Oct 17 | Project setup & interfaces | ✅ Complete |
-| Oct 18 | Uniswap V3 swapper implementation | ✅ Complete |
-| Oct 19 | Core router logic development | ✅ Complete |
-| Oct 20 | Test suite implementation | ✅ Complete |
-| Oct 21 | Frontend application development | ✅ Complete |
-| Oct 22 | Deployment scripts & documentation | ✅ Complete |
-| Oct 23 | Local testing environment setup | ✅ Complete |
-| Oct 24 | Bug fixes & final optimizations | ✅ Complete |
-
 ## Code Quality Metrics
 
 ### Smart Contracts
@@ -91,7 +78,6 @@ CollateralSwapRouter
 
 ## Repository Statistics
 
-- **Total Commits**: 12 (realistic development timeline)
 - **Files**: 88 files including contracts, frontend, tests, and documentation
 - **Languages**: Solidity, TypeScript, JavaScript, CSS
 - **Dependencies**: 25+ production dependencies
@@ -155,7 +141,6 @@ The project demonstrates strong technical execution, attention to security best 
 
 **Repository**: [https://github.com/Otieno-Coder/CometSwap](https://github.com/Otieno-Coder/CometSwap)  
 **Status**: ✅ Milestone 1 Complete  
-**Next Review**: Milestone 2 Planning Phase  
 
 ---
 
