@@ -240,4 +240,4 @@ MIT License - see LICENSE file for details
 
 ## Disclaimer
 
-This software is provided as-is. Use at your own risk. Always audit smart contracts before using with real funds.
+This software is provided as-is. Use at your own risk. Always audit smart contracts before using with real funds.// Updated: Documentation improvements
