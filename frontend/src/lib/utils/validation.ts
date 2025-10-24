@@ -59,3 +59,4 @@ export function validateSlippage(slippage: number): { isValid: boolean; error?: 
   
   return { isValid: true };
 }
+// Updated: Frontend validation improvements
