@@ -2,6 +2,28 @@
 
 A smart contract system for atomically replacing collateral on Compound v3 (Comet) protocol. Supports both direct and flash-assisted swap modes to maintain user health factors during collateral swaps.
 
+## Quick Start
+
+```bash
+# Clone and setup
+git clone https://github.com/Otieno-Coder/CometSwap.git
+cd cometswap
+
+# Install dependencies
+forge install
+cd frontend && npm install && cd ..
+
+# Start local testing environment
+anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/YOUR_RPC_URL &
+./scripts/deploy-to-anvil.sh
+./scripts/setup-position.sh
+
+# Start frontend
+cd frontend && npm run dev:local
+```
+
+Then open [http://localhost:3000](http://localhost:3000) and connect your wallet!
+
 ## Overview
 
 The Comet Collateral Swap Router allows users to atomically replace one collateral asset with another on Compound v3 while maintaining their position's health factor. The system supports two modes:
@@ -31,13 +53,14 @@ The Comet Collateral Swap Router allows users to atomically replace one collater
 ### Prerequisites
 
 - [Foundry](https://book.getfoundry.sh/getting-started/installation)
-- Node.js (for testing)
+- Node.js 18+ (for frontend and testing)
+- npm or yarn
 
 ### Setup
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Otieno-Coder/CometSwap.git
 cd cometswap
 ```
 
@@ -55,6 +78,18 @@ cp env.example .env
 4. Compile contracts:
 ```bash
 forge build
+```
+
+5. Set up frontend:
+```bash
+cd frontend
+npm install
+```
+
+6. Set up environment variables for frontend:
+```bash
+cp env.example .env.local
+# Edit .env.local with your configuration
 ```
 
 ## Usage
@@ -96,6 +131,92 @@ comet.allow(managerAddress, true);
 // Manager can now execute swaps for the user
 router.swapCollateralExactIn(params);
 ```
+
+## Frontend Application
+
+The project includes a React-based frontend for interacting with the Comet Collateral Swap Router.
+
+### Running the Frontend
+
+1. **Development Mode (Local Testing)**:
+```bash
+cd frontend
+npm run dev:local
+```
+This starts the frontend with local Anvil fork configuration.
+
+2. **Development Mode (Mainnet)**:
+```bash
+cd frontend
+npm run dev
+```
+This starts the frontend with mainnet configuration.
+
+3. **Production Build**:
+```bash
+cd frontend
+npm run build
+npm start
+```
+
+### Frontend Features
+
+- **Wallet Connection**: Connect with MetaMask, WalletConnect, and other wallets
+- **Position Overview**: View current Comet position, health factor, and balances
+- **Asset Selection**: Choose from/to assets for collateral swaps
+- **Swap Interface**: Input amounts, set slippage, and execute swaps
+- **Mode Toggle**: Switch between direct and flash-assisted swap modes
+- **Real-time Updates**: Live position data and price feeds
+
+### Frontend Configuration
+
+The frontend requires the following environment variables in `.env.local`:
+
+```bash
+# Required for local testing
+NEXT_PUBLIC_MAINNET_RPC_URL=http://localhost:8545
+NEXT_PUBLIC_CHAIN_ID=1
+
+# Optional: For WalletConnect
+NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=your_project_id
+
+# Optional: For Alchemy (if using Alchemy RPC)
+NEXT_PUBLIC_ALCHEMY_ID=your_alchemy_id
+```
+
+### Local Testing Setup
+
+1. **Start Anvil Fork**:
+```bash
+anvil --fork-url https://eth-mainnet.g.alchemy.com/v2/YOUR_RPC_URL
+```
+
+2. **Deploy Contracts**:
+```bash
+./scripts/deploy-to-anvil.sh
+```
+
+3. **Set up Test Position**:
+```bash
+./scripts/setup-position.sh
+```
+
+4. **Start Frontend**:
+```bash
+cd frontend
+npm run dev:local
+```
+
+5. **Access Application**: Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### MetaMask Configuration
+
+For local testing, add this network to MetaMask:
+
+- **Network Name**: Anvil Mainnet Fork
+- **RPC URL**: http://localhost:8545
+- **Chain ID**: 1
+- **Currency Symbol**: ETH
 
 ## Testing
 
